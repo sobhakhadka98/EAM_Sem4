@@ -23,7 +23,8 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/publishers")
 @AllArgsConstructor
 public class PublisherController {
-    private final PublisherService publisherService = new PublisherService();
+    @Autowired
+    private PublisherService publisherService;
 
     // Get all publishers
     @GetMapping

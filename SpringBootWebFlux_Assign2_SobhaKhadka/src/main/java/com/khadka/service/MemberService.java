@@ -17,7 +17,8 @@ import reactor.core.publisher.Mono;
 @Service
 @AllArgsConstructor
 public class MemberService {
-    private final MemberRepository memberRepository = null;
+    @Autowired
+    private MemberRepository memberRepository;
 
     public Flux<Member> getAllMembers() {
         return memberRepository.findAll();

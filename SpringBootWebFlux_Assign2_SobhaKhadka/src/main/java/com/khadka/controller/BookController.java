@@ -21,7 +21,8 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/books")
 @AllArgsConstructor
 public class BookController {
-    private final BookService bookService = new BookService();
+    @Autowired
+    private BookService bookService;
 
     // Get all books
     @GetMapping

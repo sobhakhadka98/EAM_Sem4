@@ -23,7 +23,8 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/members")
 @AllArgsConstructor
 public class MemberController {
-    private final MemberService memberService = new MemberService();
+    @Autowired
+    private MemberService memberService;
 
     // Get all members
     @GetMapping
